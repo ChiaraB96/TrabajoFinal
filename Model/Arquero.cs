@@ -11,7 +11,7 @@
         {
             Nombre = name;
             Fuerza = 5; 
-            Salud = 10;
+            Salud = 3;
             PoderEspecial = "Dispara lluvia de flechas";
             Tipo = "Arquero";
         }

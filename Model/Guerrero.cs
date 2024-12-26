@@ -11,7 +11,7 @@
         {
             Nombre = name;
             Fuerza = 15;
-            Salud = 11;
+            Salud = 5;
             PoderEspecial = "Frenesí asesino";
             Tipo = "Guerrero";
         }

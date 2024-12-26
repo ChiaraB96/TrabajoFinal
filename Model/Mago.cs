@@ -11,7 +11,7 @@
         {
             Nombre = name;
             Fuerza = 8;
-            Salud = 8;
+            Salud = 2;
             PoderEspecial = "Explosión Solar";
             Tipo = "Mago";
         }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TrabajoFinal.Model;
+using TrabajoFinal.Request;
 
 namespace TrabajoFinal.Controllers
 {
@@ -27,6 +28,26 @@ namespace TrabajoFinal.Controllers
                 Salud = superheroe.Salud,
                 PoderEspecial = superheroe.PoderEspecial
             });
+        }
+        [HttpGet("visitarEnfermeria")]
+        public ActionResult VisitarEnfermeria([FromQuery] EnfermeriaRequest request)
+        {
+            var enfermeria = EnfermeriaSingleton.Instancia;
+            int saludActual = request.saludActual;
+            bool atencion = enfermeria.VisitarEnfermeria(ref saludActual, request.cantidadVisitas);
+
+            if (atencion)
+            {
+                return Ok(new
+                {
+                    Salud = saludActual,
+                    AtencionesRestantes = enfermeria.GetVisitasRestantes()
+                });
+            }
+            else
+            {
+                return BadRequest("Limite de visitas alcanzado");
+            }
         }
     }
 }
