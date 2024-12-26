@@ -7,6 +7,8 @@
         int Salud { get; set; }
         string PoderEspecial { get; set; }
 
+        string Tipo { get; set; }
+
         string Atacar();
         string Defender();
 

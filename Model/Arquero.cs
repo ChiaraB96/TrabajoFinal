@@ -6,12 +6,14 @@
         public int  Fuerza { get; set; }
         public int Salud {  get; set; }
         public string PoderEspecial { get; set; }
+        public string Tipo { get; set; }
         public Arquero(string name) 
         {
             Nombre = name;
             Fuerza = 5; 
             Salud = 10;
             PoderEspecial = "Dispara lluvia de flechas";
+            Tipo = "Arquero";
         }
 
         public string Atacar() 
